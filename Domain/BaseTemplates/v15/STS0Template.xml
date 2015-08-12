@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pnp:SharePointProvisioningTemplate ID="WorkspaceMain" Version="1.0"
+  xmlns:pnp="http://schemas.dev.office.com/PnP/2015/03/ProvisioningSchema"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <pnp:SiteFields>
+    <Field Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Name" Sealed="TRUE" Type="Calculated"/>
+    <Field Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Name" Sealed="TRUE" Type="Calculated"/>
+    <Field Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Name" Sealed="TRUE" Type="Text"/>
+    <Field ID="{449F7B66-C3F7-4D3D-B863-2840E72D740B}" Type="Note" Name="BAP_Description" StaticName="BAP_Description" DisplayName="Description" NumLines="6"  RichText="TRUE" Sortable="FALSE" Group="General Workspace Element" />
+    <Field ID="{9A298B15-E1B8-4AC5-86B6-4FB4A32B88B2}" Type="URL" Name="BAP_Logo" StaticName="BAP_Logo" DisplayName="Logo" Format="Image" Group="General Workspace Element" />
+    <Field ID="{650E52E3-345A-4EFF-BC9A-478128A32AAC}" Type="URL" Name="BAP_Url" StaticName="BAP_Url" DisplayName="URL" Format="Hyperlink" Group="General Workspace Element" />
+    <Field ID="{5F5A3930-AD36-4435-A0C6-9F750DA365BC}" Type="Lookup" Name="BAP_WorkspaceType" StaticName="BAP_WorkspaceType" DisplayName="Type" List="Lists/WorkspaceType" ShowField="Title" Group="General Workspace Element" />
+    <Field ID="{D2680192-9E2B-4043-9C07-D5A416950FCB}" Type="Text" Name="BAP_ParentDependency" StaticName="BAP_ParentDependency" DisplayName="Parent Dependency" Group="General Workspace Element" />
+    <Field ID="{9FA5A022-315D-408B-B849-135899129D75}" Type="Boolean" Name="BAP_Highlighted" StaticName="BAP_Highlighted" DisplayName="Highlighted" Group="General Workspace Element" />
+    <Field ID="{13F7FA2E-BC55-4F97-81F8-865CFD6C2AE3}" Type="Lookup" Name="BAP_Template" StaticName="BAP_Template" DisplayName="Template" List="Lists/WorkspaceTemplate" ShowField="Title" Group="General Workspace Element" />
+    <Field ID="{08107F3B-C21F-41AC-B278-AE668DDC3B05}" Type="Choice" Name="BAP_Status" StaticName="BAP_Status" DisplayName="Status" Required="FALSE" Group="General Workspace Element" >
+      <CHOICES>
+        <CHOICE>Pending of creation</CHOICE>
+        <CHOICE>Alive</CHOICE>
+        <CHOICE>Pending of deletion</CHOICE>
+      </CHOICES>
+      <Default>Pending of creation</Default>
+    </Field>
+  </pnp:SiteFields>
+  <pnp:ContentTypes>
+    <pnp:ContentType ID="0x01005D4F34E4BE7F4B6892AEBE088EDD215E"
+                 Name="Workspace"
+                 Group="Birchman Provisiong Foundation Content Types"
+                 Description="General Workspace Element Content Type"
+                 Inherits="true"
+                 Version="0">
+      <pnp:FieldRefs>
+        <pnp:FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Name" Sealed="TRUE"/>
+        <pnp:FieldRef Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Name" Sealed="TRUE"/>
+        <pnp:FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Name" Sealed="TRUE"/>
+        <pnp:FieldRef ID="{449F7B66-C3F7-4D3D-B863-2840E72D740B}" Name="BAP_Description" DisplayName="Description" />
+        <pnp:FieldRef ID="{9A298B15-E1B8-4AC5-86B6-4FB4A32B88B2}" Name="BAP_Logo" DisplayName="Logo" />
+        <pnp:FieldRef ID="{650E52E3-345A-4EFF-BC9A-478128A32AAC}" Name="BAP_Url" DisplayName="URL" />
+        <pnp:FieldRef ID="{5F5A3930-AD36-4435-A0C6-9F750DA365BC}" Name="BAP_WorkspaceType" DisplayName="Type" />
+        <pnp:FieldRef ID="{D2680192-9E2B-4043-9C07-D5A416950FCB}" Name="BAP_ParentDependency" DisplayName="Parent Dependency" />
+        <pnp:FieldRef ID="{9FA5A022-315D-408B-B849-135899129D75}" Name="BAP_Highlighted" DisplayName="Highlighted" />
+        <pnp:FieldRef ID="{13F7FA2E-BC55-4F97-81F8-865CFD6C2AE3}" Name="BAP_Template" DisplayName="Template" />
+        <pnp:FieldRef ID="{08107F3B-C21F-41AC-B278-AE668DDC3B05}" Name="BAP_Status" DisplayName="Status" />
+        </pnp:FieldRefs>
+    </pnp:ContentType>
+  </pnp:ContentTypes>
+  <pnp:Lists>
+    <pnp:ListInstance Title = "Workspace Type"
+                 Description = "Workspace Types are stored here"
+                 DocumentTemplate = ""
+                 TemplateType = "100"
+                 Url = "Lists/WorkspaceType"
+                 EnableVersioning ="false"
+                 Hidden="false"
+                 RemoveDefaultContentType ="false">
+    </pnp:ListInstance>
+    <pnp:ListInstance Title = "Workspace Template"
+                Description = "Workspace Templates are stored here"
+                DocumentTemplate = ""
+                TemplateType = "100"
+                Url = "Lists/WorkspaceTemplate"
+                EnableVersioning ="false"
+                Hidden="false"
+                RemoveDefaultContentType ="false">
+    </pnp:ListInstance>
+    <pnp:ListInstance Title = "Workspace"
+                  Description = "Workspaces are stored here"
+                  DocumentTemplate = ""
+                  TemplateType = "100"
+                  Url = "Lists/Workspace"
+                  EnableVersioning ="false"
+                  Hidden="false"
+                  RemoveDefaultContentType ="true">
+      <pnp:ContentTypeBindings>
+        <pnp:ContentTypeBinding ContentTypeID="0x01005D4F34E4BE7F4B6892AEBE088EDD215E" Default="true"/>
+      </pnp:ContentTypeBindings>
+      <pnp:FieldRefs>
+        <pnp:FieldRef ID="449F7B66-C3F7-4D3D-B863-2840E72D740B" Name="BAP_Description" DisplayName="Description" />
+        <pnp:FieldRef ID="9A298B15-E1B8-4AC5-86B6-4FB4A32B88B2" Name="BAP_Logo" DisplayName="Logo" />
+        <pnp:FieldRef ID="650E52E3-345A-4EFF-BC9A-478128A32AAC" Name="BAP_Url" DisplayName="URL" />
+        <pnp:FieldRef ID="5F5A3930-AD36-4435-A0C6-9F750DA365BC" Name="BAP_WorkspaceType" DisplayName="Type" />
+        <pnp:FieldRef ID="D2680192-9E2B-4043-9C07-D5A416950FCB" Name="BAP_ParentDependency" DisplayName="Parent Dependency" />
+        <pnp:FieldRef ID="9FA5A022-315D-408B-B849-135899129D75" Name="BAP_Highlighted" DisplayName="Highlighted" />
+        <pnp:FieldRef ID="13F7FA2E-BC55-4F97-81F8-865CFD6C2AE3" Name="BAP_Template" DisplayName="Template" />
+        <pnp:FieldRef ID="08107F3B-C21F-41AC-B278-AE668DDC3B05" Name="BAP_Status" DisplayName="Status" />
+      </pnp:FieldRefs>
+      <pnp:Views RemoveExistingViews="true">
+        <View Name="{5FE34720-EE36-45A9-B80E-99A088F45F8C}" DefaultView="TRUE" MobileView="TRUE" Type="HTML" DisplayName="Workspace Items" Url="{site}Lists/Workspace/Workspace Items.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=39">
+          <Query>
+            <OrderBy>
+              <FieldRef Name="ID" />
+            </OrderBy>
+          </Query>
+          <ViewFields>
+            <FieldRef Name="DocIcon" />
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="BAP_Description" />
+            <FieldRef Name="BAP_Logo" />
+            <FieldRef Name="BAP_Url" />
+            <FieldRef Name="BAP_WorkspaceType" />
+            <FieldRef Name="BAP_ParentDependency" />
+            <FieldRef Name="BAP_Highlighted" />
+            <FieldRef Name="BAP_Template" />
+            <FieldRef Name="BAP_Status" />
+          </ViewFields>
+          <RowLimit Paged="TRUE">30</RowLimit>
+          <Aggregations Value="Off" />
+          <JSLink>clienttemplates.js</JSLink>
+          <XslLink Default="TRUE">main.xsl</XslLink>
+          <Toolbar Type="Standard" />
+        </View>
+      </pnp:Views>
+    </pnp:ListInstance>
+  </pnp:Lists>
+</pnp:SharePointProvisioningTemplate>

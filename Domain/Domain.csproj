@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC882144-E3BA-41F5-81A2-D7D6728AD9FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Birchman.RemoteProvisioning.Domain</RootNamespace>
+    <AssemblyName>Birchman.RemoteProvisioning.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CLIENTSDKV15</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Domain.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AuthenticationManager.cs.unsupported" />
+    <Compile Include="BaseTemplates\BaseTemplateManager.cs" />
+    <Compile Include="BuiltInContentTypeId.cs" />
+    <Compile Include="Connectors\FileConnectorBase.cs" />
+    <Compile Include="Connectors\FileSystemConnector.cs" />
+    <Compile Include="Connectors\SharePointConnector.cs" />
+    <Compile Include="CoreResources.Designer.cs">
+      <DependentUpon>CoreResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Extensibility\ExtensibilityManager.cs" />
+    <Compile Include="Extensibility\ExtensiblityPipelineException.cs" />
+    <Compile Include="Extensibility\IProvisioningExtensibilityProvider.cs" />
+    <Compile Include="Extensions\BrandingExtensions.cs" />
+    <Compile Include="Extensions\ClientContextExtensions.cs" />
+    <Compile Include="Extensions\Common\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\Common\EnumerationExtensions.cs" />
+    <Compile Include="Extensions\Common\SafeConvertExtensions.cs" />
+    <Compile Include="Extensions\Common\ValidationExtensions.cs" />
+    <Compile Include="Extensions\FeatureExtensions.cs" />
+    <Compile Include="Extensions\FieldAndContentTypeExtensions.cs" />
+    <Compile Include="Extensions\FileFolderExtensions.cs" />
+    <Compile Include="Providers\Xml\ProvisioningSchema-2015-03.cs">
+      <DependentUpon>ProvisioningSchema-2015-03.xsd</DependentUpon>
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Utilities\MailUtility.cs" />
+    <None Include="Domain.snk" />
+    <None Include="Extensions\InformationManagementExtensions.cs.unsupported" />
+    <Compile Include="Extensions\JavaScriptExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\NavigationExtensions.cs" />
+    <Compile Include="Extensions\PageExtensions.cs" />
+    <Compile Include="Extensions\ProvisioningExtensions.cs" />
+    <Compile Include="Extensions\RecordsManagementExtensions.cs" />
+    <Compile Include="Extensions\SearchExtensions.cs" />
+    <Compile Include="Extensions\SecurityExtensions.cs" />
+    <Compile Include="Extensions\TaxonomyExtensions.cs" />
+    <Compile Include="Providers\TemplateProviderBase.cs" />
+    <Compile Include="Providers\Xml\SharePointProvisioningTemplateExtensions.cs" />
+    <EmbeddedResource Include="Providers\Xml\ProvisioningSchema-2015-03.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Providers\Xml\XMLAzureStorageTemplateProvider.cs.unsupported" />
+    <Compile Include="Providers\Xml\XMLConstants.cs" />
+    <Compile Include="Providers\Xml\XMLFileSystemTemplateProvider.cs" />
+    <Compile Include="Providers\Xml\XMLSharePointTemplateProvider.cs" />
+    <Compile Include="Providers\Xml\XMLTemplateProvider.cs" />
+    <None Include="Extensions\TenantExtensions.cs.unsupported" />
+    <Compile Include="Extensions\VariationExtensions.cs" />
+    <Compile Include="Extensions\WebExtensions.cs" />
+    <Compile Include="Extensions\WorkflowExtensions.cs" />
+    <Compile Include="Model\ComposedLook.cs" />
+    <Compile Include="Model\ContentType.cs" />
+    <Compile Include="Model\ContentTypeBinding.cs" />
+    <Compile Include="Model\CustomAction.cs" />
+    <Compile Include="Model\CustomActions.cs" />
+    <Compile Include="Model\Feature.cs" />
+    <Compile Include="Model\Features.cs" />
+    <Compile Include="Model\Field.cs" />
+    <Compile Include="Model\FieldRef.cs" />
+    <Compile Include="Model\File.cs" />
+    <Compile Include="Model\ListInstance.cs" />
+    <Compile Include="Model\PropertyBagEntry.cs" />
+    <Compile Include="Model\Provider.cs" />
+    <Compile Include="Model\ProvisioningTemplate.cs" />
+    <Compile Include="Model\ProvisioningTemplateInfo.cs" />
+    <Compile Include="Model\SiteSecurity.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\View.cs" />
+    <None Include="ObjectHandlers\ObjectComposedLook.cs.unsupported" />
+    <Compile Include="ObjectHandlers\ObjectContentType.cs" />
+    <Compile Include="ObjectHandlers\ObjectCustomActions.cs" />
+    <Compile Include="ObjectHandlers\ObjectExtensibilityProviders.cs" />
+    <Compile Include="ObjectHandlers\ObjectFeatures.cs" />
+    <Compile Include="ObjectHandlers\ObjectField.cs" />
+    <Compile Include="ObjectHandlers\ObjectFiles.cs" />
+    <Compile Include="ObjectHandlers\ObjectHandlerBase.cs" />
+    <Compile Include="ObjectHandlers\ObjectListInstance.cs" />
+    <Compile Include="ObjectHandlers\ObjectPropertyBagEntry.cs" />
+    <Compile Include="ObjectHandlers\ObjectSiteSecurity.cs" />
+    <Compile Include="ObjectHandlers\ProvisioningTemplateCreationInformation.cs" />
+    <Compile Include="ObjectHandlers\SiteToTemplateConversion.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\KeywordsTermStoreIdToken.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\MasterPageCatalogToken.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\SiteCollectionTermStoreId.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\SiteCollectionToken.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\SiteToken.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\ThemeCatalogToken.cs" />
+    <Compile Include="ObjectHandlers\TokenDefinitions\TokenDefinition.cs" />
+    <Compile Include="ObjectHandlers\TokenParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoreResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{2d7e560a-3c71-40d9-a711-aa353dff72cf}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{27c1dcec-d76e-43ee-bcc9-1adc650fcdcb}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseTemplates\v15\STS0Template_Sample.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseTemplates\v16\STS0Template_Sample.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseTemplates\v16\STS0Template.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseTemplates\v15\STS0Template.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

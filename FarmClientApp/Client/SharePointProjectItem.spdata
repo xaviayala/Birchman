@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Client\" Type="ElementManifest" />
+    <ProjectItemFile Source="JS\jquery-2.1.4.intellisense.js" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="JS\jquery-2.1.4.js" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="JS\jquery-2.1.4.min.js" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="JS\jquery-2.1.4.min.map" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="JS\knockout-3.3.0.debug.js" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="JS\knockout-3.3.0.js" Target="Client\JS\" Type="ElementFile" />
+    <ProjectItemFile Source="App.ts" Target="LAYOUTS\FarmClientApp\Client\" Type="TemplateFile" />
+    <ProjectItemFile Source="Models\Workspace.ts" Target="Client\Models\" Type="ElementFile" />
+    <ProjectItemFile Source="ViewModels\WorkspaceViewModel.ts" Target="Client\ViewModels\" Type="ElementFile" />
+    <ProjectItemFile Source="Services\WorkspaceServiceTEST.ts" Target="Client\Services\" Type="ElementFile" />
+    <ProjectItemFile Source="Services\WorkspaceService.ts" Target="Client\Services\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

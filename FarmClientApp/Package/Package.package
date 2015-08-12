@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7883afc4-8c2a-45d2-910d-a6ea641d622a" solutionId="7883afc4-8c2a-45d2-910d-a6ea641d622a" resetWebServer="false" sharePointProductVersion="15.0" name="FarmClientApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="Birchman.RemoteProvisioning.Utilities.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Utilities\Utilities.csproj" />
+    <projectOutputAssembly location="Birchman.RemoteProvisioning.Data.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Data\Data.csproj" />
+    <projectOutputAssembly location="Birchman.RemoteProvisioning.Domain.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Domain\Domain.csproj" />
+    <projectOutputAssembly location="Birchman.RemoteProvisioning.ServiceLibrary.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\ServiceLibrary\ServiceLibrary.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="8c203864-31c2-416e-8bdf-6d85fd752e8f" />
+  </features>
+</package>

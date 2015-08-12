@@ -1,0 +1,146 @@
+﻿
+using Birchman.RemoteProvisioning.Domain.Model;
+using Birchman.RemoteProvisioning.ServiceLibrary.UserProfiles;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace Birchman.RemoteProvisioning.Api.Controllers
+{
+    public class UserProfilesSPController : ApiController
+    {
+        #region Fields
+
+        protected bool _disposed = false;
+        private UserProfilesSPService _userProfilesSPService;
+
+        #endregion
+
+        #region Constructors
+
+        public UserProfilesSPController()
+        {
+            _userProfilesSPService = new UserProfilesSPService();
+        }
+
+        #endregion
+
+
+        [HttpGet]
+
+        public IHttpActionResult TestAutentication()
+        {
+            Debug.Write("AuthenticationType:" + User.Identity.AuthenticationType);
+            Debug.Write("IsAuthenticated:" + User.Identity.IsAuthenticated);
+            Debug.Write("Name:" + User.Identity.Name);
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return Ok("Authenticated: " + User.Identity.Name);
+            }
+            else
+            {
+                return BadRequest("Not authenticated");
+            }
+        }
+        
+        public IHttpActionResult GetEcho()
+        {
+            try
+            {
+                return Ok("Hello World!");
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+   
+       public IHttpActionResult GetAllUserProfiles()
+        {
+            try
+            {
+                return Ok(_userProfilesSPService.GetAllUserProfiles().ToList());
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+       public IHttpActionResult GetAllManagersUserProfiles()
+        {
+            try
+            {
+                return Ok(_userProfilesSPService.GetAllManagersUserProfiles().ToList());
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+ 
+       public IHttpActionResult Get(string accountName)
+        {
+            UserProfile profile=_userProfilesSPService.GetUserProfile(accountName);
+            return Ok(profile);
+        }
+
+
+
+       [HttpPost]
+       public IHttpActionResult UpdateUserProfile([FromBody] UserProfile userprofile)
+        {
+            try
+            {
+                return Ok(_userProfilesSPService.UpdateUserProfile(userprofile));
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            } 
+           
+        }
+
+
+
+        #region IDisposable
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    // free managed objects that implement IDisposable
+                    if (_userProfilesSPService != null)
+                    {
+                        _userProfilesSPService.Dispose();
+                    }
+                }
+
+                // release any unmanaged objects: set the object references to null
+
+                _disposed = true;
+            }
+
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+        #region Destructor
+
+        ~UserProfilesSPController()
+        {
+            Dispose(false);
+        }
+
+        #endregion
+    }
+}
+
