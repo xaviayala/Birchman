@@ -1,0 +1,1553 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family:'clanProNews';
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+audio,canvas,iframe,img,svg,video {vertical-align: middle;}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   FONTS - Sellbytel
+   ========================================================================== */
+@font-face {
+  font-family: 'clanProBook';
+  src: url('../fonts/ClanPro-Book.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ClanPro-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  	   url('../fonts/ClanPro-Book.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ClanPro-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ClanPro-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ClanPro-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'sbt-fonticon';
+  src: url('../fonts/sbt-fonticon.eot?53909829');
+  src: url('../fonts/sbt-fonticon.eot?53909829#iefix') format('embedded-opentype'),
+       url('../fonts/sbt-fonticon.woff?53909829') format('woff'),
+       url('../fonts/sbt-fonticon.ttf?53909829') format('truetype'),
+       url('../fonts/sbt-fonticon.svg?53909829#sbt-fonticon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "sbt-fonticon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+
+}
+ 
+.icon-sbt-settings:before { content: '\e607'; } /* '' */
+.icon-sbt-menu:before { content: '\e60a'; } /* '' */
+.icon-sbt-search:before { content: '\e60c'; } /* '' */
+.icon-sbt-home:before { content: '\e606'; } /* '' */
+.icon-sbt-workspaces:before { content: '\e610'; } /* '' */
+.icon-sbt-documents:before { content: '\e605'; } /* '' */
+.icon-sbt-toolbox:before { content: '\e60f'; } /* '' */
+.icon-sbt-directory:before { content: '\e608'; } /* '' */
+.icon-sbt-social:before { content: '\e60e'; } /* '' */
+.icon-sbt-news:before { content: '\e609'; } /* '' */
+.icon-sbt-comments:before { content: '\e604'; } /* '' */
+.icon-sbt-favourites:before { content: '\e603'; } /* '' */
+.icon-sbt-read:before { content: '\e60d'; } /* '' */
+.icon-sbt-arrow:before { content: '\e602'; } /* '' */
+.icon-sbt-dots:before { content: '\e60b'; } /* '' */
+.icon-sbt-edit:before {content: '\e600'; }
+.icon-sbt-delete:before {content: '\e601'; }
+@font-face {
+  font-family: 'clanProNews';
+  src: url('../fonts/ClanPro-News.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ClanPro-News.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ClanPro-News.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ClanPro-News.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ClanPro-News.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ClanPro-News.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'clanProMedium';
+  src: url('../fonts/ClanPro-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ClanPro-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ClanPro-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ClanPro-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ClanPro-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ClanPro-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'clanProBold';
+  src: url('../fonts/ClanPro-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ClanPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ClanPro-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ClanPro-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ClanPro-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ClanPro-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+    font-family: "ClanProNews", Arial, sans-serif;
+    font-size:0.813rem;
+    font-weight:normal;
+    line-height:1.125rem;
+    color: #808080;}
+h1{
+	font-family: 'clanProBook';
+	font-size:2.500rem;
+	line-height:3.000rem;
+	color:#696969;
+	margin:10px 0;
+}
+h2{
+	font-family: 'clanProMedium';
+	font-size:18px;
+	line-height:0.875rem;
+	color:#000;
+}
+h3{
+	font-family: 'clanProBook';
+	font-size: 1rem;
+	line-height:1.125rem;
+}
+
+h4{
+	font-family: 'clanProBook';
+	font-size:0.750rem;
+	line-height:0.875rem;
+}
+h1,h2{ padding-bottom:10px; font-weight: normal;}
+h3,h4,h5{ padding-bottom:5px; font-weight: normal;}
+
+.BoldText
+{
+
+ font-family: 'clanProBold';
+
+}
+
+.fixedTop {
+    top: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.fixedLeft {
+    top: 0;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    z-index: 1029;
+}
+.SBT-navbarTop {
+    background-color:#000;
+    height:60px;
+    text-align:center;
+}
+.SBT-navbarlateral {
+    background-color:#333;
+    width:60px;    
+    padding-top:90px;
+	height: auto;
+    color:#808080;
+}
+.SBT-navbarlateral ul li{
+	height:40px;
+}
+.SBT-navbarlateral ul{
+    padding:0;
+    margin:0;
+}
+.SBT-navbarlateral li{
+  list-style:none;
+  margin-top:10px;
+  display:block;
+	width:100%;
+}
+.SBT-navbarlateral li a{
+    color:#808080;
+    text-decoration:none;
+    transition:all ease 0.3s;	
+	display:block;
+	width:100%;
+}
+.SBT-navbarlateral .texto {
+	font-family: 'clanProBold';
+  	font-size:0.813rem;
+  	font-weight: normal;
+	margin-left: 1rem;
+    padding:0.2rem 0 0 2.5rem;
+	display:none;
+	line-height: 56px;
+   
+    }
+.SBT-navbarlateral .active .texto, .SBT-navbarlateral .active .iconos, .SBT-navbarlateral li:hover .texto, .SBT-navbarlateral li:hover .iconos {
+	color:#fff !important;
+    cursor:pointer;
+    }
+.SBT-navbarlateral li.disabled:hover .texto, .SBT-navbarlateral li.disabled:hover .iconos {
+	color:#808080! important;
+	cursor: default;
+}
+.SBT-navbarlateral .iconos{    
+    float:left;
+	font-size: 1.8rem;
+	color:#808080;
+	font-family:'fonticon';
+	line-height: 2.5rem;
+	margin-left:0.5rem;
+	margin-top: 0.5rem;
+}
+.SBT-navbarlateral .search{
+    background-color:rgba(255,255,255,0.05);
+    cursor: pointer;
+    height: 48px;
+    margin-top:0;
+}
+.SBT-navbarlateral .search .iconos {
+    margin: 4px 0 4px 12px;
+}
+.SBT-navbarlateral .texto input[type="search"], .SBT-navbarlateral .texto input[type="search"]:focus:not([readonly]){
+  width: 110px;
+  font-size: 0.875rem;
+  background-color: transparent;
+  font-family: 'clanProBold';
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-style: italic;
+  border: none; 
+  border-bottom: none !important;
+  outline: none;
+  color: #fff;
+  margin-top:-10px;  
+}
+.SBT-navbarlateral .texto input:-ms-input-placeholder, .SBT-navbarlateral .texto input:focus:-ms-input-placeholder{color: #fff;} /* fix IE placeholder */
+.logoSBT {
+    display:inline-block;
+    width: 208px;
+    position: absolute;
+    left: 50%;
+    margin-left: -104px;
+    top: 12px;
+}
+.SBT-navbarRight {
+    position:absolute;
+    float:right;
+    top:0;
+    right:10px;
+}
+.SBT-navbarMenu { display:block;}
+.SBT-navbarMenu .icon-sbt-menu{
+	line-height:60px;
+	font-size:1.8rem;
+	margin-left:10px;
+	color:#808080;
+}
+
+.SBT-navbarMenu .icon-sbt-menu.open{
+	color:#fff600;
+}
+.SBT-navbarMenu .icon-sbt-menu:hover {
+    color:#fff600;
+	cursor: pointer;
+    transition:all ease 0.3s;
+}
+.SBT-navbarLeft {
+    float:left;
+}
+.SBT-navbarRight{
+	margin-top: 10px;
+}
+.SBT-navbarUser span{
+	font-family:'clanProNews';
+    font-style:italic;
+    color:#fff;
+	margin-right:15px;
+	display:inline-block;
+	padding-top:13px;
+	font-weight:bold;
+}
+.SBT-navbarUser span:first-child {margin-right:5px;font-family:'clanProNews'; font-weight:normal;}
+.SBT-navbarUser a div {
+	-moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    border-radius:50%;
+	float: right;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+}
+.SBT-navbarUser a img {	   
+    height: auto;
+    width: 100%;
+}
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.SBT-ribbon{
+    margin: 40px 0 0;
+    padding-left:60px;    
+}
+.ribbonContent{
+    background: #333 none repeat scroll 0 0;    
+    padding-top: 15px;
+}
+
+.SBT-mainContent.container{
+	width:1010px;
+	min-width:1010px;
+	margin:0 auto 20px;
+}
+.fixedRight {
+    top: 0;
+    position: fixed;
+    right: 0;
+    bottom:0;
+    z-index: 1029;
+}
+.zonaMensajes {
+        background-color:#666;
+        width:60px;
+        padding-top:80px;
+}
+.SBT-mainContent #SBT-leftContent{
+	float:left;
+}
+
+.SBT-pageTitle{	
+	color:#696969;
+	text-transform:capitalize;
+    padding:0;	
+}
+h1.SBT-pageTitle {
+  font-weight: normal;
+}
+
+.SBT-mainContent section{
+	margin-top: 20px;
+	clear:both;	
+}
+
+section .SBT-sectionTitle{	
+	text-transform:capitalize;	
+}
+section .SBT-sectionSubTitle{
+	text-transform:capitalize;
+}
+section .SBT-sectionTitle,
+h2.SBT-sectionTitle{
+	width:100%;
+	text-align: left;
+	border-bottom: 2px solid #000;
+	color:#000;
+  margin-bottom: 27px;
+}
+section .SBT-sectionSubTitle,
+h3.SBT-sectionSubTitle{
+	width:100%;
+	text-align: left;
+	border-bottom: 1px solid #666;
+}
+
+/* ==========================================================================
+   Our Clients Module
+   ========================================================================== */
+.ourclients_module .SBT-home-module{  
+  border: 1px solid #dfdfdf;
+  height: 170px;
+  line-height: 170px;
+  overflow: hidden;
+}
+.ourclients_module .SBT-home-module a{  
+  display: block;
+}
+.ourclients_module .SBT-home-module img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.ourclients_module .btn-terciary .icon-sbt-arrow{
+    border-left: 1px solid #000000;
+    padding-left: 3px;
+    margin-left: 9px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-right: 5px;
+}
+
+.ourclients_module .btn-terciary:hover .icon-sbt-arrow{
+  border-left-color: #fff600;
+}
+
+.ourclients_module .btn-terciary .icon-sbt-arrow:before{  
+  font-size: 14px;
+}
+
+.ourclients_module .btn-terciary{
+  width: 87px;
+  height: 30px;
+  background-size: cover;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 30px 0 0 0;
+  cursor: pointer;
+}
+
+.ourclients_module .btn-terciary:hover{
+  width: 93px;
+}
+
+#SBT-rightContent section > h3.SBT-sectionSubTitle{
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   All Our Clients Grid
+   ========================================================================== */
+.all_our_clients_module,
+.all_workspaces_module,
+.all_workspaces_page{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+
+}
+
+.all_our_clients_module h2,
+.all_workspaces_module h2,
+.all_workspaces_page h2{
+  font-family: 'clanProBook', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  margin: 0 0 23px 0;
+  width: 100%;
+  margin: 0;
+
+}
+
+.all_our_clients_module .grid_all_clients:after,
+.all_workspaces_module .grid_all_worspaces:after {
+  content:"";
+  display:table;
+  clear:both;/*clear*/
+}
+
+.all_our_clients_module .outter-banner{
+  width: 264px;
+  height: auto;
+  float: left;
+  margin-right: 71px;
+}
+
+.all_our_clients_module .outter-banner:nth-child(3n)
+{
+  margin-right:0px;
+} 
+
+.all_our_clients_module .wrap-banner{
+  width: 100%;
+
+  max-width: 264px;
+  margin: 20px auto;
+}
+
+.all_our_clients_module .grid_all_clients{
+  margin: 10px 0 0 0;
+}
+
+.all_our_clients_module .wrap-banner p{
+  font-family: "ClanProNews", Arial, sans-serif;
+  color: #969696;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.all_our_clients_module .banner{
+  margin: 0 0 20px 0;
+  height: 177px;
+  line-height: 176px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.all_our_clients_module .banner:hover{
+  border-color: #3D3C3C;
+}
+
+.all_our_clients_module .banner a{
+  display: block;
+}
+
+.all_our_clients_module .banner img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 1024px){
+  .all_our_clients_module .outter-banner{
+    margin-right: 94px;
+  }
+}
+
+/* ==========================================================================
+   Wizard Autoprovision
+   ========================================================================== */
+.wizard_autoprovision_module{
+  position: relative;
+}
+
+.modal.autoprovision .wizard_autoprovision_module .title{
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #454545; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.modal.autoprovision .form_module{
+  width: 500px;
+  margin: 60px auto;
+  height: auto;
+}
+
+.modal.autoprovision .form_module .wrap-input{
+  width: 100%;
+  font-size: 0; /*Avoid gap of display inline-block*/
+  margin: 0 0 23px 0;
+}
+
+.modal.autoprovision .form_module input[type=text],
+.modal.autoprovision .form_module input[type=file],
+.modal.autoprovision .form_module select {
+    border: 1px solid #dedede;
+    width: 384px;
+    height: auto;
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 10px;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.modal.autoprovision .form_module label{
+    display: inline-block;
+    margin-right: 14px;
+    text-align: right;
+    width: 80px;
+    font-size: 12px;
+}
+
+.modal.autoprovision .form_module input{
+    display: inline-block;
+}
+
+.modal.autoprovision .form_module select{
+    display: inline-block;
+    width: 406px;
+    padding: 4px 6px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.modal.autoprovision .form_module textarea{
+    resize: none;
+    display: inline-block;
+    width: 406px;
+    height: 90px;
+    vertical-align:30px;
+    border: 1px solid #dedede;
+    font-size: 12px;
+    padding: 9px 11px;
+
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.modal.autoprovision .form_module .wrap-input.textarea:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.modal.autoprovision .form_module .wrap-input.textarea label,
+.modal.autoprovision .form_module .wrap-input.textarea textarea{
+  float: left;
+  display: block;
+}
+
+.modal.autoprovision .form_module .wrap-input.textarea label{
+    margin: 10px 14px 0 0;
+}
+
+.modal.autoprovision .form_module input[type=file]{
+    width: 406px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.modal.autoprovision .form_module input[type=button]{
+  min-width: 6em;
+  padding: 7px 10px;
+  border: 1px solid #ababab;
+  background-color: #fdfdfd;
+  background-color: #fdfdfd;
+  margin-left: 10px;
+  font-family: "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+  font-size: 11px;
+  color: #444;
+  float: right;
+}
+
+.modal.autoprovision .form_module .wrap-checkbox{
+  padding: 0 0 0 95px;
+  margin-bottom: 23px;
+}
+
+.modal.autoprovision .form_module .wrap-checkbox input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked{
+  position: static;
+}
+
+.modal.autoprovision .form_module .wrap-checkbox input[type="checkbox"]:checked+label:before,
+.modal.autoprovision .form_module .wrap-checkbox input[type="checkbox"]+label:before{
+  display: none;
+}
+
+.modal.autoprovision .form_module .wrap-checkbox label{    
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal.autoprovision .form_module .wrap-checkbox input{
+   vertical-align: -1px;
+}
+
+.modal.autoprovision .form_module input[type=button]{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+
+.modal.autoprovision .form_module input[type=button]:hover{
+  opacity: 0.8;
+}
+
+.modal.autoprovision .form_module input[type=text]:focus,
+.modal.autoprovision .form_module textarea:focus,
+.modal.autoprovision .form_module select:focus,
+.modal.autoprovision .form_module input[type=file]:focus
+{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+
+.modal.autoprovision .close{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.modal.autoprovision .closeButton{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 0;
+    transition: .3s;
+    background: 0 0;
+    position: relative;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.modal.autoprovision .closeButton:before,
+.modal.autoprovision .closeButton:after{
+    display: inline-block;
+    height: 30px;
+    border-radius: 0;
+    transition: .3s;
+    background: 0 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto; 
+    background: #727272; 
+}
+
+.modal.autoprovision .closeButton:before{
+  height: 2px;
+  left: 0;
+}
+
+.modal.autoprovision .closeButton:after{
+  height: 2px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  border: 0;
+  -webkit-transform: rotate3d(0,0,1,90deg);
+  transform: rotate3d(0,0,1,90deg);
+}
+
+.modal.autoprovision .closeButton:hover{
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+}
+
+/* ===========================================
+   BUTTONS
+   =========================================== */
+.btn-terciary {
+  display: inline-block;
+  font-family: "ClanProNews", Arial, sans-serif;
+  color: black;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: right;
+  text-decoration: none !important;
+  background: url('../img/btn_yellow.png') no-repeat;
+  margin:40px 0; 
+  height: 30px;
+  background-size: cover;
+  padding: 0 0 0 20px;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 30px 0 0 0;
+  cursor: pointer; 
+}
+.btn-terciary:hover {
+  color: #fff600 !important;
+  background: url('../img/btn_black.png') no-repeat;
+}
+.btn-terciary:hover span {
+	  border-color:#fff600;
+    color: #fff600;
+}
+.btn-terciary:active {
+  color: #fff600 !important;
+  background: url('../assets/img/misc/btn_cta_hover.png?1398708114') no-repeat;
+}
+.btn-primary {
+  display: inline-block;
+  background: #333333;
+  font-family: "ClanProNews", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #dedede;
+  font-weight: normal;
+  text-decoration: none !important;
+  min-width: 110px;
+  padding: 12px 15px 9px;
+  text-align: center;
+  border: none;
+}
+.btn-primary:hover {
+  background: black;
+  color: #fff600 !important;
+}
+.btn-primary-fixed {
+  background: #333333;
+  color: #dedede;
+}
+.btn-secondary {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 9px 15px 5px 15px;
+  background: #6a6a6a;
+  font-family: "ClanProNews", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  font-weight: normal;
+  text-decoration: none !important;
+  border: none;
+}
+.btn-secondary:hover {
+  background: black;
+}
+
+#CorporateNews-container .btn-terciary:hover{
+  padding: 0px 0 0 26px;
+}
+
+/******************************
+	IFRAME SCROLL IPAD
+*******************************/  
+
+.scroll-wrapper {
+	-webkit-overflow-scrolling: touch;
+  	overflow-y: scroll;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .SBT-mainContent {
+		margin: 0 auto 20px ;				
+		width: 1024px ;
+        }
+    .SBT-navbarlateral {        
+        width:0 ;        
+    }
+	.SBT-navbarlateral li a .texto, .SBT-navbarlateral li .iconos, .SBT-navbarlateral li input, .SBT-navbarlateral{ display:none ;}
+	.SBT-mainContent #SBT-rightContent  {margin-left:40px;}
+	.SBT-ribbon {
+        margin:  40px 0 20px; padding-left:0; }
+
+}
+@media (min-width: 1025px) {
+    .SBT-mainContent {
+		margin: 30px auto 20px ;				
+		width: 100% ;
+		padding-left:60px;
+		}
+		.SBT-mainContent #SBT-rightContent { margin-left:8.33333%}
+		.slidesjs-container, .slidesjs-control{ width: 539px !important}
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.invisible {
+    visibility: hidden;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;    
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:after {
+	clear: both;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a, a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ==========================================================================
+   News modal
+   ========================================================================== */
+.modal-content h3 {
+    font-family: "clanProBook";
+    font-size: 34px;
+    line-height: 44px;
+	color:#606060;
+	text-align:left;
+}
+
+.modal-content h2.title{
+  font-family: 'clanProBook', sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  margin: 0 0 23px 0;
+}
+
+.modal-content section{
+  font-size: 0;
+}
+
+.modal-content section:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.modal-content section .column{
+  float:left;
+  width: 48.45%; 
+  height: auto;
+}
+
+.modal-content .column h3.subtitle{
+  font-family: "clanProMedium", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 27px;
+}
+
+.modal-content .column p{
+  font-family: "clanProBook", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #666666;
+  font-weight: normal;
+  margin: 0 0 15px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.modal-content .column img{
+  max-width: 100%;
+}  
+
+.modal-content section .column:first-child{
+  margin-right: 3.076%;
+}
+
+.modal-content .column .list{
+  margin-top: 20px;
+}
+
+.modal-content .column .wrap-data{
+  margin: 0 0 30px 0;
+}
+
+.modal-content .column .wrap-data h4.category{
+  font-family:'clanProNews', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  color: #969696;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+
+.modal-content .column .wrap-data p{
+  font-family:'clanProNews', sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content .column .wrap-data p a{
+  text-decoration: underline;
+  color: #000000;
+}
+
+.modal-content .column .wrap-image{
+  border: 1px solid #dfdfdf;
+  height: 234px;
+  line-height: 203px;
+  overflow: hidden;
+}
+
+.modal-content .newsInfo li, .modal-content .modalNewsVideo p, .modal-content .modalNewsImage p {
+    font-family: "clanProMedium";
+    font-size: 12px;
+	text-align:left;
+}
+.modal-content ul li {list-style-type: none}
+.modal-content ul{ margin-left:0px; padding-left: 0px;}
+.modal-content{width:auto; padding:40px}
+
+#modal1 .modal-content .modalNewsImage img{height:auto; width:100%}  
+#modal1 .modal-content .modalNewsVideo video{height:auto; width:100%}  
+
+.fancybox-skin {width:400px}
+.fancybox-skin {width:400px}
+.fancybox-skin {background-color:white; padding: 0!important}
+a.fancybox-item.fancybox-close {display:none}
+
+
+/*******************************************
+		MATERIALIAZE OVERWRITE
+********************************************/
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+    box-shadow: none;
+}
+nav ul li:hover, nav ul li.active {
+    background-color: transparent;
+}
+input[type="search"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 transparent;
+}
+select:focus {
+    outline: 1px solid inherit;
+}
+button:focus {
+    background-color: inherit;
+    outline: none;
+}
+
+/**************************************
+        BOOTSTRAP OVERWRITE
+***************************************/
+
+.special > div[class*="col-"] {
+       padding: 0; 
+}
+
+
+/**************************************
+        LANDING GRID WORKSPACES
+***************************************/
+
+.all_workspaces_module .grid_all_worspaces{
+  margin: 40px 0 0 0;
+}
+
+.all_workspaces_module .grid_all_worspaces .outter-banner .wrap-buttons{
+  width: 100%;
+  height: 188px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.all_workspaces_module .grid_all_worspaces .outter-banner .wrap-banner{
+  position: relative;
+  width: 147px;
+  cursor: pointer;
+}
+
+.all_workspaces_module .grid_all_worspaces .outter-banner{
+  width: 147px;
+  float: left;
+  position: relative;
+  margin: 0 46px 26px 0;
+  height: 214px;
+}
+
+.all_workspaces_module .grid_all_worspaces .outter-banner:nth-child(5n)
+{
+  margin-right:0px;
+}
+
+.all_workspaces_module .grid_all_worspaces:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.all_workspaces_module .grid_all_worspaces .banner{
+  width: 147px;
+  height: 147px;
+  border-radius: 50%;
+  border: 1px solid #DDDDDD;
+  overflow: hidden;
+
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.all_workspaces_module .grid_all_worspaces .wrap-buttons{
+  visibility: hidden;
+}
+.all_workspaces_module .grid_all_worspaces .btn-edition{
+
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  font-size: 30px;
+  color: #DDDDDD;
+  height:30px;
+
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+
+}
+
+.all_workspaces_module .grid_all_worspaces .btn-edition.icon-sbt-edit:before,
+.all_workspaces_module .grid_all_worspaces .btn-edition.icon-sbt-delete:before{
+  margin: 0;
+  padding: 0;
+}
+
+.all_workspaces_module .grid_all_worspaces .btn-edition.icon-sbt-edit{
+  right: 78px;
+}
+
+.all_workspaces_module .grid_all_worspaces .btn-edition.icon-sbt-delete{
+  right: 40px;
+}
+
+
+/*.all_workspaces_module .grid_all_worspaces .wrap-buttons:hover > .btn-edition{
+  visibility: visible; 
+  opacity: 1;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}*/
+
+.all_workspaces_module .grid_all_worspaces .wrap-buttons:hover + .wrap-banner .banner{
+   border-color: #3D3C3C; 
+
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+
+.all_workspaces_module .grid_all_worspaces .banner:hover{
+  border-color: #3D3C3C; 
+}
+
+.all_workspaces_module .grid_all_worspaces .btn-edition:hover{
+   color: #3D3C3C;
+   text-decoration: none;
+}
+
+
+.all_workspaces_module .grid_all_worspaces .wrap-buttons:hover + .wrap-banner p{
+  margin: 52px 0 0 0;
+
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.all_workspaces_module .grid_all_worspaces .wrap-banner p{
+  text-align: center;
+  margin: 26px 0 0 0;
+
+  font-family:'clanProNews', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.all_workspaces_module .grid_all_worspaces .banner img{
+  max-height: 100%; 
+  height: auto;
+  margin-left: -34px;  
+}
+
+
+@media screen and (max-width: 1024px){
+  .all_workspaces_module .grid_all_worspaces .outter-banner{
+    margin: 0 57px 26px 0;
+  }
+}
+
+
+/**************************************
+        WORKSPACES TOOL MODULE
+***************************************/
+.workspaces_module .outter{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 30px 0 20px 0;
+}
+
+.workspaces_module.tools .outter{
+  cursor: pointer;
+}
+
+
+.workspaces_module .outter:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+
+.workspaces_module .wrap-img-tool,
+.workspaces_module .text-tool{
+  float: left;
+}
+
+.workspaces_module .wrap-img-tool{
+  border: 1px solid #DFDFDF;
+  width: 95px;
+  height: 95px;
+  padding: 22px;
+  margin-right: 18px; 
+}
+
+.workspaces_module .wrap-img-tool img{
+  max-width: 100%;
+  height: auto;
+
+}
+
+.workspaces_module .text-tool{
+  width: 350px;
+  color: #666666;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.workspaces_module .text-tool h4{
+  color: #000000;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px 0;
+  font-family: 'clanProMedium', sans-serif;
+}
+
+.workspaces_module .text-tool h4 a{
+  display: block;
+  width: 100%;
+  height: auto;
+
+  color: #000000;
+  text-decoration: none;
+}
+
+.workspaces_module .text-tool p span{
+  height: 52px;
+  overflow: hidden;
+  color: #666666 !important;
+  margin:0;
+  font-family: 'clanProBook', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 18px !important;
+
+}
+
+/**************************************
+        WORKSPACES TEAM MODULE
+***************************************/
+
+
+.workspaces_module.team .wrap-img-tool{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 94px;
+  height: 94px;
+  padding: 0;
+  border: none;
+}
+
+.workspaces_module.team .wrap-img-tool img{
+  max-width: 94px;
+}
+
+.workspaces_module.team .text-tool h4{
+  margin: 10px 0 3px 0;
+  padding: 0;
+}
+
+.workspaces_module.team .text-tool h6{
+  color: #666666;
+  margin:0;
+  font-family: 'clanProBook', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.workspaces_module.team .text-tool p{
+  height: auto;
+}
+
+
+.workspaces_module.team .members{
+  width: 540px;
+  height: auto;
+  padding: 0;
+  margin: 26px 0;
+}
+
+.workspaces_module.team .members li{
+  width: 50%;
+  height: 60px;
+}
+
+.workspaces_module.team .members li{
+  display: inline-block;
+  float: left;
+  margin: 10px 0;
+}
+
+.workspaces_module.team .members .wrap-member{
+  cursor: pointer;
+  display: block;
+}
+
+
+.workspaces_module.team .members .wrap-member:after, .workspaces_module.team .members:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.workspaces_module.team .members .wrap-member .wrap-img-tool{
+  width: 60px;
+  height: 60px;
+
+  margin-right: 15px;
+}
+
+.workspaces_module.team .members .wrap-member .wrap-img-tool img{
+  max-width: 60px;
+}
+
+.workspaces_module.team .members .wrap-member .text-tool{
+  width: 176px;
+  display: table;
+  height: 60px;
+}
+
+.workspaces_module.team .members .wrap-member .text-tool span{
+  display: table-cell;
+  vertical-align: middle; 
+}
+
+
+.workspaces_module.team .icon-sbt-dots{
+  font-size: 20px;
+}
+
+.workspaces_module.team .SBT-PersonalWall-Finish{
+  padding-top: 4px;
+}
+
+
+
+/*Custom select*/
+
+
+.workspaces_module.team .form_module .select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.workspaces_module.team .form_module .select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  width: 220px;
+  height: 40px;
+}
+
+.workspaces_module.team .form_module .select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #c0392b;
+  padding: 8px 15px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.workspaces_module.team .form_module .select-styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+.workspaces_module.team .form_module .select-styled:hover {
+  background-color: #b83729;
+}
+.workspaces_module.team .form_module .select-styled:active, .select-styled.active {
+  background-color: #ab3326;
+}
+.workspaces_module.team .form_module .select-styled:active:after, .select-styled.active:after {
+  top: 9px;
+  border-color: transparent transparent #fff transparent;
+}
+
+.workspaces_module.team .form_module .select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #ab3326;
+}
+.workspaces_module.team .form_module .select-options li {
+  margin: 0;
+  padding: 12px 0;
+  text-indent: 15px;
+  border-top: 1px solid #962d22;
+  -moz-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+.workspaces_module.team .form_module .select-options li:hover {
+  color: #c0392b;
+  background: #fff;
+}
+.workspaces_module.team .form_module .select-options li[rel="hide"] {
+  display: none;
+}

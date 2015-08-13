@@ -9,4 +9,7 @@
   <features>
     <featureReference itemId="8c203864-31c2-416e-8bdf-6d85fd752e8f" />
   </features>
+  <projectItems>
+    <projectItemReference itemId="f8076dd3-d293-4c92-be35-7ab65eea40a3" />
+  </projectItems>
 </package>

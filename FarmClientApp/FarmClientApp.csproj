@@ -68,6 +68,12 @@
     <Compile Include="Features\Provisioner\Provisioner.EventReceiver.cs">
       <DependentUpon>Provisioner.feature</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\FarmClientApp\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\FarmClientApp\test.aspx.designer.cs">
+      <DependentUpon>test.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +92,9 @@
       <FeatureId>{d5eec699-d6e1-4386-b8be-3dde0e1d464d}</FeatureId>
     </None>
     <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f8076dd3-d293-4c92-be35-7ab65eea40a3}</SharePointProjectItemId>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -123,6 +132,17 @@
     <Content Include="Features\Provisioner\Provisioner.Template.xml">
       <DependentUpon>Provisioner.feature</DependentUpon>
     </Content>
+    <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\materialize.min.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\materializeOverwrite.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\SBT-main.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\js\materialize.min.js" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\wizard_autoprovision.html" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\css\materialize.min.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\css\materializeOverwrite.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\css\SBT-main.css" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\js\materialize.min.js" />
+    <Content Include="Layouts\FarmClientApp\Autoprovision\wizard_autoprovision.html" />
+    <Content Include="Layouts\FarmClientApp\test.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

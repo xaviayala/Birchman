@@ -1,0 +1,119 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sellbytel - Autoprovisión</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico" />
+    <title>Our Clients</title>
+    <!--<link rel="stylesheet" href="css/normalize.min.css">-->
+    <link href="css/SBT-main.css" rel="stylesheet" type="text/css" media="all">  
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/materializeOverwrite.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+      <!-- Modal Trigger  http://materializecss.com/modals.html -->
+      <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal autoprovision">
+
+        <div class="wizard_autoprovision_module">  
+
+          <button type="button" class="close">
+            <span class="closeButton"></span>           
+          </button>
+
+            <h2 class="title">Create your workspace</h2>
+
+            <form role="form" class="form_module">
+
+              <div class="wrap-input">
+                <label for="name">Name</label>
+                <input type="text" id="inName" name="name" required/>
+              </div>
+
+              <div class="wrap-input textarea">
+                <label for="textareaDescription">Description</label>
+                <textarea maxlength="140" cols="40" rows="8" name="textareaDescription" required>Write something here</textarea>        
+              </div>              
+
+              <div class="wrap-input">
+               <label for="type">Upload logo</label>
+               <input id="inputFile" type="file" data-preview-file-type="text">
+              </div>
+
+              <div class="wrap-input">
+                <label for="type">Type</label>
+                <select required>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>   
+                  <option value="3">Option 3</option>         
+                </select>
+              </div>
+
+              <div class="wrap-input">
+                <label for="template">Template</label>
+                <select required>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>   
+                  <option value="3">Option 3</option>         
+                </select>
+              </div>
+              
+              <div class="wrap-input textarea">
+                <label for="textareaOwner">User Owner</label>
+                <textarea maxlength="140" cols="40" rows="8" name="textareaOwner" required>Write a name here</textarea>      
+              </div>
+
+              <div class="wrap-input textarea">
+                <label for="textareaMamber">User Member</label>
+                <textarea maxlength="140" cols="40" rows="8" name="textareaMamber" required>Write a name here</textarea>     
+              </div>
+
+              <div class="wrap-input textarea">
+                <label for="textareaVisitor">User Visitors</label>
+                <textarea maxlength="140" cols="40" rows="8" name="textareaVisitor" required>Write a name here</textarea>   
+              </div>
+
+              <div class="wrap-checkbox">
+                <input id="checkboxHighlight" type="checkbox" name="check" >
+                <label for="checkboxHighlight">Highlighted</label>
+              </div>
+
+              <div class="wrap-buttons">
+                <input type="button" id="btnSave" accesskey="O" value="Save">
+                <input type="button" id="btnCancel" accesskey="1" value="Cancel">
+              </div>
+              
+
+            </form>        
+        </div>
+
+      </div>         
+   
+
+       
+  <script>
+    $(document).ready(function(){    
+    $('.modal-trigger').leanModal({
+      complete: function() { playStop(); } // Callback for Modal close
+    });
+    //var myVideo = document.getElementById("newsVideo"); 
+
+   
+    });
+  </script>
+        
+
+          
+</body>
+</html>
