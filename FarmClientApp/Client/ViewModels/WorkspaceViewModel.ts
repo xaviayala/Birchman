@@ -1,5 +1,6 @@
 ﻿module Birchman.RemoteProvisioning.FarmClientApp.Client.ViewModels {
     import Workspace = Birchman.RemoteProvisioning.FarmClientApp.Client.Models.Workspace;
+    import WorkspaceService = Birchman.RemoteProvisioning.FarmClientApp.Client.Services.WorkspaceService;
 
     export class WorkspaceViewModel {
         public Name: KnockoutObservable<string>;
@@ -12,6 +13,7 @@
         public UserVisitors: KnockoutObservable<string>;
         public Highlighted: KnockoutObservable<boolean>;
         public Title: KnockoutObservable<string>;
+        private _ws = WorkspaceService;
 
         constructor() {
             this.init();
@@ -28,7 +30,8 @@
             this.UserMember = ko.observable("");
             this.UserVisitors = ko.observable("");
             this.Highlighted = ko.observable(false);
-
+           // this._ws = new WorkspaceService();
+            
         }
 
 
@@ -42,6 +45,7 @@
                 this.UserVisitors() + "\n" +
                 this.Highlighted()
                 );
+            //this._ws.save()
 
         }
 

@@ -13,5 +13,7 @@
     <ProjectItemFile Source="ViewModels\WorkspaceViewModel.ts" Target="Client\ViewModels\" Type="ElementFile" />
     <ProjectItemFile Source="Services\WorkspaceServiceTEST.ts" Target="Client\Services\" Type="ElementFile" />
     <ProjectItemFile Source="Services\WorkspaceService.ts" Target="Client\Services\" Type="ElementFile" />
+    <ProjectItemFile Source="Birchman.RemoteProvisioning.js" Target="Client\" Type="ElementFile" />
+    <ProjectItemFile Source="Birchman.RemoteProvisioning.js.map" Target="Client\" Type="ElementFile" />
   </Files>
 </ProjectItem>

@@ -26,6 +26,10 @@ namespace Birchman.RemoteProvisioning.Console.Tests
 
 
                 cc.Web.ApplyProvisioningTemplate(pt);
+
+               
+
+
             }
         }
 

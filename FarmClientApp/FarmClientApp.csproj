@@ -83,6 +83,7 @@
     <None Include=".bin\grunt.cmd" />
     <None Include=".bin\node.cmd" />
     <None Include=".bin\npm.cmd" />
+    <None Include="Client\Birchman.RemoteProvisioning.js.map" />
     <None Include="Client\JS\jquery-2.1.4.min.map" />
     <None Include="Client\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9b024b84-cf92-4bfd-b565-719134eea429}</SharePointProjectItemId>
@@ -122,6 +123,7 @@
     <TypeScriptCompile Include="_references.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\Birchman.RemoteProvisioning.js" />
     <Content Include="Client\Elements.xml" />
     <Content Include="Client\JS\jquery-2.1.4.intellisense.js" />
     <Content Include="Client\JS\jquery-2.1.4.js" />
@@ -134,6 +136,7 @@
     <Content Include="Features\Provisioner\Provisioner.Template.xml">
       <DependentUpon>Provisioner.feature</DependentUpon>
     </Content>
+    <Content Include="Layouts\FarmClientApp\AutoprovisioningForm.aspx" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\materialize.min.css" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\materializeOverwrite.css" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\Autoprovision\css\SBT-main.css" />
@@ -144,7 +147,6 @@
     <Content Include="Layouts\FarmClientApp\Autoprovision\css\SBT-main.css" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\js\materialize.min.js" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\wizard_autoprovision.html" />
-    <Content Include="Layouts\FarmClientApp\AutoprovisioningForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

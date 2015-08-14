@@ -11,5 +11,7 @@
     <File Path="Client\ViewModels\WorkspaceViewModel.ts" Url="Client/ViewModels/WorkspaceViewModel.ts" />
     <File Path="Client\Services\WorkspaceServiceTEST.ts" Url="Client/Services/WorkspaceServiceTEST.ts" />
     <File Path="Client\Services\WorkspaceService.ts" Url="Client/Services/WorkspaceService.ts" />
+    <File Path="Client\Birchman.RemoteProvisioning.js" Url="Client/Birchman.RemoteProvisioning.js" />
+    <File Path="Client\Birchman.RemoteProvisioning.js.map" Url="Client/Birchman.RemoteProvisioning.js.map" />
   </Module>
 </Elements>

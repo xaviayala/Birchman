@@ -10,6 +10,6 @@
 namespace Birchman.RemoteProvisioning.FarmClientApp.Layouts.FarmClientApp {
     
     
-    public partial class test {
+    public partial class RemoteProvisoningForm {
     }
 }

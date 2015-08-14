@@ -1,7 +1,7 @@
 ﻿module Birchman.RemoteProvisioning.FarmClientApp.Client.Services {
     import WorkspaceViewModel = Birchman.RemoteProvisioning.FarmClientApp.Client.ViewModels.WorkspaceViewModel;
 
-    export interface IWorksapceService<T> {
+    export interface IWorkspaceService<T> {
         baseUrl: string;
         siteURl: string;
         selectUrl: string;
@@ -13,7 +13,7 @@
         export var format: any;
     }
 
-    export class WorksapceService<T> implements IWorksapceService<T> {
+    export class WorkspaceService<T> implements IWorkspaceService<T> {
 
         public baseUrl: string;
         public siteURl: string;

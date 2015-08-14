@@ -29,15 +29,15 @@ var Birchman;
             (function (Client) {
                 var Services;
                 (function (Services) {
-                    var WorksapceService = (function () {
-                        function WorksapceService() {
+                    var WorkspaceService = (function () {
+                        function WorkspaceService() {
                             this.baseUrl = "/";
                         }
                         //Function to build WebService URL
-                        WorksapceService.prototype.getListItemsWsUrl = function (weburl, listTitle, nbitems) {
+                        WorkspaceService.prototype.getListItemsWsUrl = function (weburl, listTitle, nbitems) {
                             return String.format("{0}/_api/web/lists/GetByTitle('{1}')/Items?$top={2}", weburl, listTitle, nbitems);
                         };
-                        WorksapceService.prototype.getListItems = function (weburl, listTitle, nbItems) {
+                        WorkspaceService.prototype.getListItems = function (weburl, listTitle, nbItems) {
                             var result;
                             jQuery.ajax({
                                 url: this.getListItemsWsUrl(weburl, listTitle, nbItems),
@@ -55,7 +55,7 @@ var Birchman;
                             });
                             return result;
                         };
-                        WorksapceService.prototype.getListItemsFiltered = function (weburl, listTitle, nbItems, viewQuery) {
+                        WorkspaceService.prototype.getListItemsFiltered = function (weburl, listTitle, nbItems, viewQuery) {
                             var result;
                             jQuery.ajax({
                                 url: this.getListItemsWsUrl(weburl, listTitle, nbItems),
@@ -74,7 +74,7 @@ var Birchman;
                             });
                             return result;
                         };
-                        WorksapceService.prototype.UpdateUserMarkDate = function (markDate, useraccount) {
+                        WorkspaceService.prototype.UpdateUserMarkDate = function (markDate, useraccount) {
                             var UserMarkDate = {
                                 UserAccount: useraccount,
                                 MarkDate: markDate
@@ -100,9 +100,9 @@ var Birchman;
                                 }
                             });
                         };
-                        return WorksapceService;
+                        return WorkspaceService;
                     })();
-                    Services.WorksapceService = WorksapceService;
+                    Services.WorkspaceService = WorkspaceService;
                 })(Services = Client.Services || (Client.Services = {}));
             })(Client = FarmClientApp.Client || (FarmClientApp.Client = {}));
         })(FarmClientApp = RemoteProvisioning.FarmClientApp || (RemoteProvisioning.FarmClientApp = {}));
@@ -118,8 +118,10 @@ var Birchman;
             (function (Client) {
                 var ViewModels;
                 (function (ViewModels) {
+                    var WorkspaceService = Birchman.RemoteProvisioning.FarmClientApp.Client.Services.WorkspaceService;
                     var WorkspaceViewModel = (function () {
                         function WorkspaceViewModel() {
+                            this._ws = WorkspaceService;
                             this.init();
                         }
                         WorkspaceViewModel.prototype.init = function () {
@@ -133,9 +135,11 @@ var Birchman;
                             this.UserMember = ko.observable("");
                             this.UserVisitors = ko.observable("");
                             this.Highlighted = ko.observable(false);
+                            // this._ws = new WorkspaceService();
                         };
                         WorkspaceViewModel.prototype.save = function () {
                             alert("tus datos son: \n" + this.Name() + "\n" + this.Description() + "\n" + this.Logo() + "\n" + this.Type() + "\n" + this.Template() + "\n" + this.UserOwner() + "\n" + this.UserVisitors() + "\n" + this.Highlighted());
+                            //this._ws.save()
                         };
                         WorkspaceViewModel.prototype.cancel = function () {
                             location.reload();
