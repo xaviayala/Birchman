@@ -69,11 +69,12 @@
     <Compile Include="Features\Provisioner\Provisioner.EventReceiver.cs">
       <DependentUpon>Provisioner.feature</DependentUpon>
     </Compile>
-    <Compile Include="Layouts\FarmClientApp\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="Layouts\FarmClientApp\AutoprovisioningForm.aspx.cs">
+      <DependentUpon>AutoprovisioningForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Layouts\FarmClientApp\test.aspx.designer.cs">
-      <DependentUpon>test.aspx.cs</DependentUpon>
+    <Compile Include="Layouts\FarmClientApp\AutoprovisioningForm.aspx.designer.cs">
+      <DependentUpon>AutoprovisioningForm.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,7 +144,7 @@
     <Content Include="Layouts\FarmClientApp\Autoprovision\css\SBT-main.css" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\js\materialize.min.js" />
     <Content Include="Layouts\FarmClientApp\Autoprovision\wizard_autoprovision.html" />
-    <Content Include="Layouts\FarmClientApp\test.aspx" />
+    <Content Include="Layouts\FarmClientApp\AutoprovisioningForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

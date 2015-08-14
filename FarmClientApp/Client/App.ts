@@ -5,7 +5,7 @@
 
     export class App {
 
-        public static initPersonalWall(obj: Object) {
+        public static initAutoprovision(obj: Object) {
             try {
                 if (obj == null)
                     throw new Error("Null container");

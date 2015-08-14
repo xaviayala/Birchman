@@ -123,6 +123,7 @@ var Birchman;
                             this.init();
                         }
                         WorkspaceViewModel.prototype.init = function () {
+                            this.Title = ko.observable("Esto es el título");
                             this.Name = ko.observable("");
                             this.Description = ko.observable("");
                             this.Logo = ko.observable("");
@@ -130,19 +131,14 @@ var Birchman;
                             this.Template = ko.observable("");
                             this.UserOwner = ko.observable("");
                             this.UserMember = ko.observable("");
-                            this.UserVisitor = ko.observable("");
+                            this.UserVisitors = ko.observable("");
                             this.Highlighted = ko.observable(false);
                         };
-                        WorkspaceViewModel.prototype.refresh = function () {
-                            var data = this.discussions.slice(0);
-                            this.discussions([]);
-                            this.discussions(data);
-                        };
                         WorkspaceViewModel.prototype.save = function () {
-                            alert("tus datos son: " + this.Name() + "</br>" + this.Description() + "</br>" + this.Logo() + "</br>" + this.Type() + "</br>" + this.Template() + "</br>" + this.UserOwner() + "</br>" + this.UserVisitor() + "</br>" + this.Highlighted());
+                            alert("tus datos son: \n" + this.Name() + "\n" + this.Description() + "\n" + this.Logo() + "\n" + this.Type() + "\n" + this.Template() + "\n" + this.UserOwner() + "\n" + this.UserVisitors() + "\n" + this.Highlighted());
                         };
                         WorkspaceViewModel.prototype.cancel = function () {
-                            this.init();
+                            location.reload();
                         };
                         return WorkspaceViewModel;
                     })();
@@ -164,7 +160,7 @@ var Birchman;
                 var App = (function () {
                     function App() {
                     }
-                    App.initPersonalWall = function (obj) {
+                    App.initAutoprovision = function (obj) {
                         try {
                             if (obj == null)
                                 throw new Error("Null container");
